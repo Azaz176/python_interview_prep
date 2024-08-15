@@ -86,22 +86,107 @@
 
 ##############################INHERITANCE#####################
 
-class User:
-    def __init__(self, name, id):
-        self.name = name
-        self.id = id
+# class User:
+#     def __init__(self, name, id):
+#         self.name = name
+#         self.id = id
 
-    def _login(self):
-        print("login")
+#     def _login(self):
+#         print("login")
 
-    def logout(self):
-        print("logout")
+#     def logout(self):
+#         print("logout")
 
-class Student(User):
-    pass
+# class Student(User):
+#     pass
 
-# Create an instance of Student with required arguments
-s1 = Student("Alice", 101)
+# # Create an instance of Student with required arguments
+# s1 = Student("Alice", 101)
 
-# Call the login method
-s1._login()
+# # Call the login method
+# s1._login()
+
+class Parent:
+    parentName = "XYZ"
+    
+    def __init__(self, totalChildren, income, totalHouse):
+        self.totalChildren = totalChildren
+        self.income = income
+        self.totalHouse = totalHouse
+        
+    def __printIncome(self):
+        print(f"total income is {self.income}")
+        
+    def _protectedHouse(self):
+        print(f"total house {self.totalHouse}")
+        
+    def printChildren(self):
+        print(f"total children {self.totalChildren}")
+
+class Child(Parent):
+    def __init__(self, parentName, childName, siblings, totalChildren, income, totalHouse):
+        super().__init__(totalChildren, income, totalHouse)  # Call the Parent's __init__ method
+        self.parentName = parentName
+        self.childName = childName
+        self.siblings = siblings
+        super().printChildren()
+        # super().income## cannot access attribute with super, only methods
+    
+    def callParentMethod(self):
+        print("calling parent method")
+        super().printChildren()
+
+c1 = Child("Saif", "Taimur", 3, 2, 50000, 1)  # Pass the necessary arguments for Parent
+print(c1.totalChildren)
+c1.callParentMethod()
+
+
+################### POLYMORPHISM ############################3
+# ## 1. Method Overloading
+# class Deatils:
+#     def __init__(self, name, phone, address=""):
+#         if(address==""):
+#             self.two(name, phone)
+#         else:
+#             self.one(name, phone, address)
+            
+#     def one(self, name, phone, address):
+#         self.name=name
+#         self.phone=phone
+#         self.address= address
+        
+#     def two(self, name, phone):
+#         self.name=name
+#         self.phone=phone
+        
+# c1= Deatils("az", 87, "delhi")
+# print(c1)
+
+
+## 2. Method Overriding
+# class Animal:
+#     def speak(self):
+#         print("Animal speaks")
+
+# class Dog(Animal):
+#     def speak(self):
+#         print("Bark!")
+
+# class Cat(Animal):
+#     def speak(self):
+#         print("Meow!")
+
+# def animal_sound(animal):
+#     animal.speak()
+
+# # Create instances of Dog and Cat
+# dog = Dog()
+# cat = Cat()
+# animal= Animal()
+# # Use polymorphism to call the speak method
+# animal_sound(dog)  # Output: Bark!
+# animal_sound(cat)  # Output: Meow!
+# animal_sound(animal)
+
+
+############## ABSTRACTIN ######################

@@ -1,3 +1,1 @@
-def __init__(self, name, id):
-    #     self.name=name
-    #     self.id=id
+ # super().income## cannot access attribute with super, only methods

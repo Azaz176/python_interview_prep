@@ -164,11 +164,16 @@
 
 
 
-#################genrator comprehension
-squares = (x**2 for x in range(1, 6))
-for num in squares:
-     print(num)
-squares1= [x**2 for x in range(1, 6)]
-print(squares1)
+# #################genrator comprehension
+# squares = (x**2 for x in range(1, 6))
+# for num in squares:
+#      print(num)
+# squares1= [x**2 for x in range(1, 6)]
+# print(squares1)
+
+# for i in range(5, 2, -1):#-1 for decrement of i
+#      print(i)
+
+
 
 

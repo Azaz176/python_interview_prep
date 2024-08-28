@@ -38,9 +38,20 @@
 # print_kwargs(power="strong", location="winterfell")
 
 ## generator function with yield
-def even_generator(limit):
-    for i in range(2, limit+1, 2):
-        yield i
+# def even_generator(limit):
+#     for i in range(2, limit+1, 2):
+#         yield i
 
-for num in even_generator(10):
-    print(num)
+# for num in even_generator(10):
+#     print(num)
+
+# #### MAX and MIN in Python
+# print(2**100>float("inf"))## max
+# print(2**500<float("-inf"))## min
+
+#### Initialize lists
+# li= [1]*5
+# print(li)
+
+a,b,c=[1,3,5]
+print(a,b,c)
